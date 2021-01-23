@@ -12,15 +12,15 @@ marp: true
 # Lineage
 
 - BuckleScript: Compile OCaml to readable JS
-- ReasonML: JS syntax for (native) OCaml
-- ReScript: BuckleScript + JS focused ReasonML fork(-ish)
+- ReasonML: JS-like syntax for (native) OCaml
+- ReScript: BuckleScript and forked ReasonML syntax
 
 
 --- 
 # Hello World
 
 ```reasonml
-Js.Console.log("Hello World")
+Js.log("Hello World")
 ```
 
 # FizzBuzz
@@ -34,7 +34,7 @@ for n in 0 to 20 {
   | (0, _) => "Fizz"
   | (_, 0) => "Buzz"
   | (_, _) => Int.toString(n)
-  }->Console.log
+  }->log
 }
 ```
 ---
@@ -139,6 +139,24 @@ let message = j`hello $age years old, $name`
 
 ---
 
+# Functions
+
+```reasonml
+let greet = () => "Hello"
+
+let rec factorial = n =>
+  if n <= 1 { 1 } else { n * factorial(n - 1) }
+
+let make = (~bread, ~cheese, ~meat) => 
+  j`$meat sandwich with $cheese cheese on $bread`
+
+let sandwich = make(~cheese="feta", ~bread="flatbread", ~meat="lamb")
+```
+
+More features: Optional labels, explicit optionals, default values, uncurried functions.
+
+---
+
 # Records
 
 Nominal product types requiring type declaration
@@ -175,12 +193,13 @@ type ref<'a> = {
 ```reasonml
 let i = ref(0)
 while i.contents < 10 {
-  Js.Console.log(i.contents)
+  Js.log(i.contents)
   i := i.contents + 1
 }
 ```
 
---- 
+---
+
 
 # Objects
 
@@ -197,7 +216,7 @@ let zuko =  {
   "breed": "Persian"
 }
 
-let print = entity => Js.Console.log(entity["name"])
+let print = entity => Js.log(entity["name"])
 
 print(shritesh);
 print(zuko);
@@ -226,6 +245,13 @@ let area = shape => switch shape {
 
 ---
 
+# Option and Result
+
+```reasonml
+type option<'a> = None | Some('a)
+type result<'a, 'b> = Ok('a) | Error('b)
+```
+
 # Recursive types
 
 ```reasonml
@@ -238,7 +264,101 @@ let linkedList = Node(10, Node(20, None))
 
 ---
 
-# Caveats
+# Polymorphic variants
 
-- Stable but still changing
-- stdlib (Belt) is incomplete / outdated
+Anonymous variants that are structually typed
+
+```reasonml
+let car = #red
+let grass = #green
+// TODO: Example
+```
+
+// TODO: Constraints
+
+---
+
+# Arrays
+
+ReScript uses Arrays by default. Indexing is syntatic sugar for `Array.get`
+```reasonml
+open Belt
+let arr = [1, 2, 3]
+let first: option<int> = arr[0]
+```
+
+In OCaml and JS, `Array.get` doesn't return an option
+
+```reasonml
+// open Js
+let arr = [1, 2, 3]
+let first: int = arr[0]
+```
+
+---
+
+# List
+```reasonml
+let l = list{1, 2, 3}
+
+let isEmpty = switch l {
+  | list{} => true
+  | list{_head, ..._rest} => false
+}
+```
+
+More data structures will follow this pattern in the future
+
+
+
+# Control flow
+
+```reasonml
+if something { thenThis } else { thenThat }
+if something { thenThis } // else { () }  // implicit
+
+for i in 0 to 10 { Js.log(i) }
+for i in 0 downto 10 { Js.log(i) }
+
+while condition { inner_loop() } // See ref example above
+```
+
+---
+
+# Destructuring and Pattern matching
+
+Irrefutable patterns can be destructured
+```reasonml
+let coordinates = (1, 2, 0)
+let (x, y, _) = coordinates
+
+let sum = ((x, y, z)) = x + y + z // even in functions
+```
+
+Pattern matching using switch
+```reasonml
+switch Some(10) {
+| Some(n) when n > 10 => "More than ten" // when guard
+| Some(2) | Some(4) => "Two or four" // multiple clauses
+| Some(_) => "Not two, four or ten"
+| None => "No number given"
+}
+```
+---
+
+
+# Pipe (first)
+
+Syntactic sugar for function application
+
+```reasonml
+let sum = (a, b, c) => a + b + c
+let four = 1->sum(2, 1)
+let addTwo = 1->sum(_, 1) // placeholder
+let five = addTwo(3)
+
+let someFive = five->Some // Can pipe into variants!!!
+```
+
+`|>` is deprecated, heavier, pipes last and doesn't work with variants
+
