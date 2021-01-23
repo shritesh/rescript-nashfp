@@ -46,17 +46,16 @@ Js.Console.log("Hello World")
 # FizzBuzz
 
 ```reasonml
-open Belt
+open Js
 
-let fizzBuzz = (~upto) =>
-  Array.range(0, upto)->Array.map(n =>
-    switch (mod(n, 3), mod(n, 5)) {
-    | (0, 0) => "FizzBuzz"
-    | (0, _) => "Fizz"
-    | (_, 0) => "Buzz"
-    | (_, _) => Int.toString(n)
-    }
-  )
+for n in 0 to 20 {
+  switch (mod(n, 3), mod(n, 5)) {
+  | (0, 0) => "FizzBuzz"
+  | (0, _) => "Fizz"
+  | (_, 0) => "Buzz"
+  | (_, _) => Int.toString(n)
+  }->Console.log
+}
 ```
 
 ---
