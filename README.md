@@ -241,6 +241,8 @@ let area = shape => switch shape {
   | Triangle(t) => t.base *. t.height /. 2.0
   | Rectangle(l, b) => l *. b
 }
+
+Rectangle(3.0, 3.0)->area->Js.log
 ```
 
 ---
@@ -269,12 +271,22 @@ let linkedList = Node(10, Node(20, None))
 Anonymous variants that are structually typed
 
 ```reasonml
-let car = #red
-let grass = #green
-// TODO: Example
-```
+let drawVegetable = color => switch color {
+  | #Green => "lettuce"
+  | #Red => "radish"
+  | #White => "mushroom"
+  }
 
-// TODO: Constraints
+let drawFruit = color => switch color {
+  | #Yellow => "banana"
+  | #Red => "cranberry"
+  | #Green => "avocado"
+  }
+
+let color = #Red
+let vegetable = drawVegetable(color)
+let fruit = drawFruit(color)
+```
 
 ---
 
@@ -309,6 +321,7 @@ let isEmpty = switch l {
 
 More data structures will follow this pattern in the future
 
+---
 
 
 # Control flow
@@ -362,3 +375,21 @@ let someFive = five->Some // Can pipe into variants!!!
 
 `|>` is deprecated, heavier, pipes last and doesn't work with variants
 
+---
+
+# Exceptions
+
+---
+
+# JSX
+
+---
+
+# Misc.
+
+- Lazy
+- First Class Modules / Functors
+
+--- 
+
+# Interop
