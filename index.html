@@ -21,6 +21,23 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3">
+<h1>Hello World</h1>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Js</span>.</span><span class="hljs-module"><span class="hljs-identifier">Console</span>.</span></span>log(<span class="hljs-string">&quot;Hello World&quot;</span>)
+</span></span></foreignObject></svg></code></pre>
+<h1>FizzBuzz</h1>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">open</span> Js
+
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-keyword">to</span> <span class="hljs-number">20</span> {
+  switch (<span class="hljs-keyword">mod</span>(n, <span class="hljs-number">3</span>), <span class="hljs-keyword">mod</span>(n, <span class="hljs-number">5</span>)) {
+  <span class="hljs-pattern-match">| (0, 0) =&gt;</span> <span class="hljs-string">&quot;FizzBuzz&quot;</span>
+  <span class="hljs-pattern-match">| (0, <span class="hljs-constructor">_</span>) =&gt;</span> <span class="hljs-string">&quot;Fizz&quot;</span>
+  <span class="hljs-pattern-match">| (<span class="hljs-constructor">_</span>, 0) =&gt;</span> <span class="hljs-string">&quot;Buzz&quot;</span>
+  <span class="hljs-pattern-match">| (<span class="hljs-constructor">_</span>, <span class="hljs-constructor">_</span>) =&gt;</span> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Int</span>.</span></span><span class="hljs-keyword">to</span><span class="hljs-constructor">String(<span class="hljs-params">n</span>)</span>
+  }-&gt;<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Console</span>.</span></span>log
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4">
 <h1>ReScript vs. Elm</h1>
 <ul>
 <li>Not a framework</li>
@@ -28,37 +45,153 @@
 <li>Overhead-free interop with JS</li>
 <li>Human readable JS output</li>
 <li>More powerful type system</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4">
-<h1>ReScript vs. TypeScript</h1>
-<ul>
-<li>Not a superset of JavaScript</li>
-<li>Cannot just strip types; Need to be compiled</li>
-<li>Sound type system</li>
-<li>Simpler language</li>
-<li>(Ridiculously) fast compiler</li>
+<li>Arrays by default</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5">
-<h1>Hello World</h1>
-<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Js</span>.</span><span class="hljs-module"><span class="hljs-identifier">Console</span>.</span></span>log(<span class="hljs-string">&quot;Hello World&quot;</span>)
-</span></span></foreignObject></svg></code></pre>
-<h1>FizzBuzz</h1>
-<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">open</span> Belt
-
-<span class="hljs-keyword">let</span> fizzBuzz =<span class="hljs-function"> (<span class="hljs-params">~upto</span>) =&gt;</span>
-  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>range(<span class="hljs-number">0</span>, upto)-&gt;<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Array</span>.</span></span>map(n =&gt;
-    switch (<span class="hljs-keyword">mod</span>(n, <span class="hljs-number">3</span>), <span class="hljs-keyword">mod</span>(n, <span class="hljs-number">5</span>)) {
-    <span class="hljs-pattern-match">| (0, 0) =&gt;</span> <span class="hljs-string">&quot;FizzBuzz&quot;</span>
-    <span class="hljs-pattern-match">| (0, <span class="hljs-constructor">_</span>) =&gt;</span> <span class="hljs-string">&quot;Fizz&quot;</span>
-    <span class="hljs-pattern-match">| (<span class="hljs-constructor">_</span>, 0) =&gt;</span> <span class="hljs-string">&quot;Buzz&quot;</span>
-    <span class="hljs-pattern-match">| (<span class="hljs-constructor">_</span>, <span class="hljs-constructor">_</span>) =&gt;</span> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Int</span>.</span></span><span class="hljs-keyword">to</span><span class="hljs-constructor">String(<span class="hljs-params">n</span>)</span>
-    }
-  )
-</span></span></foreignObject></svg></code></pre>
+<h1>ReScript vs. TypeScript</h1>
+<ul>
+<li>Not a superset of JavaScript</li>
+<li>Simpler language</li>
+<li>Sound type system, not opt-in</li>
+<li>(Ridiculously) fast compiler</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6">
+<h1>Language Tour</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7">
+<h1>Let and blocks</h1>
+<p>Immutable bindings</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> answer = <span class="hljs-number">21</span><span class="hljs-operator"> * </span><span class="hljs-number">2</span>
+</span></span></foreignObject></svg></code></pre>
+<p>Block scope; returns last expression</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> message = {
+  <span class="hljs-keyword">let</span> part1 = <span class="hljs-string">&quot;Hello&quot;</span>
+  <span class="hljs-keyword">let</span> part2 = <span class="hljs-string">&quot;world&quot;</span>
+  part1<span class="hljs-operator"> ++ </span><span class="hljs-string">&quot; &quot;</span><span class="hljs-operator"> ++ </span>part2
+}
+</span></span></foreignObject></svg></code></pre>
+<p><a href="https://twitter.com/jordwalke/status/1001944847379521536"></a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8">
+<h1>Types</h1>
+<ul>
+<li>Strong, static and sound</li>
+<li>Global type inference</li>
+</ul>
+<p>Type annotation</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> count: <span class="hljs-built_in">int</span> = <span class="hljs-number">42_000</span>
+<span class="hljs-keyword">let</span> count = (<span class="hljs-number">42_000</span>: <span class="hljs-built_in">int</span>)
+</span></span></foreignObject></svg></code></pre>
+<p>Type alias</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> occurence = (<span class="hljs-built_in">char</span>, <span class="hljs-built_in">int</span>)
+<span class="hljs-keyword">let</span> lInHello: occurence = (<span class="hljs-character">&#x27;l&#x27;</span>, <span class="hljs-number">2</span>)
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9">
+<h1>Types (contd.)</h1>
+<p>Type parameters (generics)</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> vec2&lt;&#x27;a&gt; = (&#x27;a, &#x27;a)
+<span class="hljs-keyword">let</span> point: vec2&lt;<span class="hljs-built_in">int</span>&gt; = (<span class="hljs-number">10</span>, <span class="hljs-number">10</span>)
+<span class="hljs-keyword">let</span> point: vec2&lt;<span class="hljs-built_in">float</span>&gt; = (<span class="hljs-number">10.0</span>, <span class="hljs-number">10.0</span>)
+
+<span class="hljs-keyword">let</span> points: <span class="hljs-built_in">array</span>&lt;vec2&lt;<span class="hljs-built_in">int</span>&gt;&gt; = <span class="hljs-literal">[(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>), (<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), (<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)]</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10">
+<h1>Operators</h1>
+<p>Different operators for different types</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-number">3</span> + <span class="hljs-number">5</span>
+<span class="hljs-number">3.0</span><span class="hljs-operator"> +. </span><span class="hljs-number">5.0</span>
+<span class="hljs-string">&quot;Nash&quot;</span><span class="hljs-operator"> ++ </span><span class="hljs-string">&quot;FP&quot;</span>
+</span></span></foreignObject></svg></code></pre>
+<p>Custom operators <a href="https://rescript-lang.org/blog/editor-support-custom-operators-and-more#custom-operators">will be added back soon</a>.</p>
+<h1>String interpolation</h1>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;Shritesh&quot;</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>
+<span class="hljs-keyword">let</span> greeting = `hello ${name}` <span class="hljs-comment">// Strings only</span>
+<span class="hljs-keyword">let</span> message = j`hello $age years old, $name`
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11">
+<h1>Records</h1>
+<p>Nominal product types requiring type declaration</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> person = {
+  name: <span class="hljs-built_in">string</span>,
+  age: <span class="hljs-built_in">int</span>
+}
+<span class="hljs-keyword">let</span> shritesh = {name: <span class="hljs-string">&quot;Shritesh&quot;</span>, age: <span class="hljs-number">25</span>} <span class="hljs-comment">// type is inferred</span>
+<span class="hljs-keyword">let</span> olderShritesh = {...shritesh, age: shritesh.age + <span class="hljs-number">1</span>}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12">
+<h1>Mutation and ref</h1>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> player = {
+  name: <span class="hljs-built_in">string</span>,
+  <span class="hljs-keyword">mutable</span> score: <span class="hljs-built_in">int</span>
+}
+<span class="hljs-keyword">let</span> mario = {name: <span class="hljs-string">&quot;Mario&quot;</span>, score: <span class="hljs-number">10</span>}
+mario.score = mario.score + <span class="hljs-number">1</span>
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment">// built into the language</span>
+<span class="hljs-keyword">type</span> <span class="hljs-built_in">ref</span>&lt;&#x27;a&gt; = {
+  <span class="hljs-keyword">mutable</span> contents: &#x27;a
+}
+</span></span></foreignObject></svg></code></pre>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> i = <span class="hljs-built_in">ref</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">while</span> i.contents &lt; <span class="hljs-number">10</span> {
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Js</span>.</span><span class="hljs-module"><span class="hljs-identifier">Console</span>.</span></span>log(i.contents)
+  i := i.contents + <span class="hljs-number">1</span>
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13">
+<h1>Objects</h1>
+<p>Structural, inferred, polymorphic product types; Compiles to JS Objects</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">let</span> shritesh = {
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Shritesh&quot;</span>,
+  <span class="hljs-string">&quot;nationality&quot;</span>: <span class="hljs-string">&quot;Nepali&quot;</span>
+}
+
+<span class="hljs-keyword">let</span> zuko =  {
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Zuko&quot;</span>,
+  <span class="hljs-string">&quot;breed&quot;</span>: <span class="hljs-string">&quot;Persian&quot;</span>
+}
+
+<span class="hljs-keyword">let</span> print =<span class="hljs-function"> <span class="hljs-params">entity</span> =&gt;</span> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Js</span>.</span><span class="hljs-module"><span class="hljs-identifier">Console</span>.</span></span>log(entity<span class="hljs-literal">[&quot;<span class="hljs-identifier">name</span>&quot;]</span>)
+
+print(shritesh);
+print(zuko);
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14">
+<h1>Variants</h1>
+<p>Nominal sum types</p>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> shape =
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">Point</span>
+  | <span class="hljs-constructor">Circle(<span class="hljs-params">float</span>)</span>
+  | <span class="hljs-constructor">Triangle({<span class="hljs-params">base</span>: <span class="hljs-params">float</span>, <span class="hljs-params">height</span>: <span class="hljs-params">float</span>})</span> <span class="hljs-operator">/</span><span class="hljs-operator">/</span> inline record
+  | <span class="hljs-constructor">Rectangle(<span class="hljs-params">float</span>, <span class="hljs-params">float</span>)</span>
+
+<span class="hljs-keyword">let</span> area = shape =&gt;</span> switch shape {
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">Point</span> =&gt;</span> <span class="hljs-number">0.0</span>
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">Circle(<span class="hljs-params">r</span>)</span> =&gt;</span> <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Js</span>.</span><span class="hljs-module"><span class="hljs-identifier">Math</span>.</span><span class="hljs-module"><span class="hljs-identifier">_PI</span> </span><span class="hljs-operator">*</span></span>. r<span class="hljs-operator"> *. </span>r
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">Triangle(<span class="hljs-params">t</span>)</span> =&gt;</span> t.base<span class="hljs-operator"> *. </span>t.height<span class="hljs-operator"> /. </span><span class="hljs-number">2.0</span>
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">Rectangle(<span class="hljs-params">l</span>, <span class="hljs-params">b</span>)</span> =&gt;</span> l<span class="hljs-operator"> *. </span>b
+}
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
+<h1>Recursive types</h1>
+<pre><code class="language-reasonml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">type</span> <span class="hljs-keyword">rec</span> node&lt;&#x27;a&gt; =
+  <span class="hljs-pattern-match">| <span class="hljs-constructor">None</span>
+  | <span class="hljs-constructor">Node(&#x27;<span class="hljs-params">a</span>, <span class="hljs-params">node</span>&lt;&#x27;<span class="hljs-params">a</span>&gt;)</span>
+
+<span class="hljs-keyword">let</span> linked<span class="hljs-constructor">List</span> = <span class="hljs-constructor">Node(10, Node(20, None)</span>)
+</span></span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
 <h1>Caveats</h1>
 <ul>
 <li>Stable but still changing</li>
