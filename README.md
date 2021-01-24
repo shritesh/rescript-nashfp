@@ -28,7 +28,7 @@ Js.log("Hello World")
 ```reasonml
 open Js
 
-for n in 0 to 20 {
+for n in 1 to 20 {
   switch (mod(n, 3), mod(n, 5)) {
   | (0, 0) => "FizzBuzz"
   | (0, _) => "Fizz"
@@ -331,7 +331,7 @@ if something { thenThis } else { thenThat }
 if something { thenThis } // else { () }  // implicit
 
 for i in 0 to 10 { Js.log(i) }
-for i in 0 downto 10 { Js.log(i) }
+for i in 10 downto 0 { Js.log(i) }
 
 while condition { inner_loop() } // See ref example above
 ```
@@ -379,17 +379,34 @@ let someFive = five->Some // Can pipe into variants!!!
 
 # Exceptions
 
+Exceptional variants
+
+```reasonml
+exception Out_of(string)
+
+let chewBubblegum = () =>
+  if Js.Math.random() < 0.5 {
+    raise(Out_of("bubblegum"))
+  } else { "Kick Ass" }
+
+try {
+  chewBubblegum()
+} catch {
+| Out_of(thing) => "I'm all out of " + thing
+}
+
+switch chewBubblegum() {
+| message => message
+| exception Out_of(thing) => "I'm all out of " + thing
+}
+```
 ---
-
-# JSX
-
----
-
 # Misc.
 
-- Lazy
+- JSX
 - First Class Modules / Functors
+- Lazy
 
 --- 
 
-# Interop
+# Interop Demo
