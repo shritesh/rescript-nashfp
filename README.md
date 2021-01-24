@@ -13,7 +13,7 @@ marp: true
 
 - BuckleScript: Compile OCaml to readable JS
 - ReasonML: JS-like syntax for (native) OCaml
-- ReScript: BuckleScript and forked ReasonML syntax
+- ReScript: BuckleScript rebranded with JS-focused syntax
 
 
 --- 
@@ -56,6 +56,7 @@ for n in 1 to 20 {
 - Simpler language
 - Sound type system, not opt-in
 - (Ridiculously) fast compiler
+- Smaller community and library bindings
 
 --- 
 
@@ -409,4 +410,14 @@ switch chewBubblegum() {
 
 --- 
 
-# Interop Demo
+# [Interop Demo](https://github.com/shritesh/rescript-nashfp/tree/main/src)
+
+APIs used
+- [jsPDF](https://github.com/mrrio/jspdf) [(Docs)](https://rawgit.com/MrRio/jsPDF/master/docs/index.html)
+- [fs.readFileSync](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
+
+
+---
+
+# Thank You
+@shritesh
