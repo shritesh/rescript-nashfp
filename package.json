@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "*"
+  },
+  "dependencies": {
+    "jspdf": "^2.3.0"
   }
 }
